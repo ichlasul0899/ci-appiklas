@@ -19,8 +19,12 @@
         }
 
         public function hapusDataBarang($id_barang){
-            $this->db->where('id_barang',$id_barang);
-            $this->db->delete('barang');
+            // $this->db->where('id_barang',$id_barang);
+            $this->db->delete('barang',['id_barang' => $id_barang]);
+        }
+
+        public function getBarangById($id_barang){
+            return $this->db->get_where('barang',['id_barang' => $id_barang])->row_array();
         }
 
     }

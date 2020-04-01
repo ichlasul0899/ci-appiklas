@@ -33,7 +33,7 @@
                     <li class="list-group-item">
                         <?= $brg['nama_barang']; ?>
                         <a href="<?= base_url(); ?>barang/hapus/<?= $brg['id_barang'] ; ?>" class="badge btn-danger float-right" onclick="return confirm('Are you sure ? ');">hapus</a>
-                
+                        <a href="<?= base_url(); ?>barang/detail/<?= $brg['id_barang'] ; ?>" class="badge btn-primary float-right" >detail</a>
                     </li>
                 <?php endforeach; ?>
                 

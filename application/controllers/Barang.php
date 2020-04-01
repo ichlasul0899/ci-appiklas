@@ -45,4 +45,12 @@ class Barang extends CI_Controller {
         $this->session->set_flashdata('flash','dihapus');
         redirect('barang');
     }
+
+    public function detail($id_barang){
+        $data['judul'] = 'Detail barang';
+        $data['barang'] = $this->M_barang->getBarangById($id_barang);
+        $this->load->view('templates/header',$data);
+        $this->load->view('v_detailbarang',$data);
+        $this->load->view('templates/footer');
+    }
 }
